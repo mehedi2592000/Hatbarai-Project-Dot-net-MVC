@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Midproject.Models.En.UserFrom>
+
+@{
+    ViewBag.Title = "OrphanList";
+}
+
+<h2>OrphanList</h2>
+
+<p>
+    @using (Html.BeginForm("OrphanList", "Userfro",FormMethod.Get))
+            {
+                <input type="text" name="name" placeholder="Enter Orphane name..."/>
+                <input type="submit" name="submit" value="Search"/>
+            }
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Orphan_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.Label("Added By")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Orphan_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VolunteerLogin.Name)
+        </td>
+        <td>
+           @* @Html.ActionLink("Edit", "Edit", new { id=item.Serial }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Serial }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Serial })*@
+        </td>
+    </tr>
+}
+
+</table>

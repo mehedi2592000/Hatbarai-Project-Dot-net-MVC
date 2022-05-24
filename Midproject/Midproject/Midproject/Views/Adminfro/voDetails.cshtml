@@ -1,0 +1,34 @@
+﻿@model Midproject.Models.En.VolunteerLogin
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>@Model.Name</h4>
+
+<h5> list of user</h5>
+<table class="table table-bordered">
+    <tr>
+        <th>Serial</th>
+        <th> Name </th>
+        <th>mobile number</th>
+        <th> Orphan name</th>
+        <th>Location</th>
+        <th>Date</th>
+    </tr>
+    @foreach(var s in Model.UserFroms)
+            {
+                <tr>
+                    <td>@s.Serial</td>
+                    <td>@s.Name</td>
+                    <td>@s.mobile_number</td>
+                    <td>@s.Orphan_name</td>
+                    <td>@s.Location</td>
+                    <td>@s.Date</td>
+                </tr>
+            }
+</table>
+
+<div>
+    you you want to back
+    <a class="btn btn-primary" href="/Adminfro/Index">go back</a>
+</div>

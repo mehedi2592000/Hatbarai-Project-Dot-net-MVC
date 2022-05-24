@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Hath-barai", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "font-size:180%;font-weight: bold" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (Session["Username"] == null && Session["Username2"] == null && Session["Username3"] == null && Session["Username4"] == null)
+                    {
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    }
+                </ul>
+                <ul class="nav navbar-nav" style="float: right !important">
+
+
+                    @if (Session["Username"] != null)
+                    {
+
+
+                        <li> <p style="color:navajowhite; margin-top=15px;">  Hellow @Session["USername"]</p></li>
+                        <li>@Html.ActionLink("profile information", "Adminprofile", "Adminfro")</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "AdminLog")</li>
+                    }
+                    @if (Session["Username"] == null && Session["Username2"] == null && Session["Username3"] == null && Session["Username4"] == null)
+                    {
+                        <li>@Html.ActionLink("Admin", "Login", "AdminLog")</li>
+                        <li>@Html.ActionLink("User", "Login", "UserLog")</li>
+                        <li>@Html.ActionLink("Agency", "Login", "AgencyLog")</li>
+                        <li>@Html.ActionLink("Volunteer", "Login", "VolunteerLog")</li>
+                        
+                    }
+                    @if (Session["Username2"] != null)
+                    {
+                        <li>@Html.ActionLink("Menu", "Index", "Userfro")</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "UserLog")</li>
+                    }
+
+                    @if (Session["Username3"] != null)
+                    {
+                        <li>@Html.ActionLink("Menu", "Do", "Agencyfro")</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "AgencyLog")</li>
+                    }
+
+                    @if (Session["Username4"] != null)
+                    {
+                        <li> <p style="color:navajowhite; margin-top=15px;">  Hellow @Session["USername4"]</p></li>
+                        <li>@Html.ActionLink("Logout", "Logout", "VolunteerLog")</li>
+                    }
+
+
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; We are Hathbarai</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

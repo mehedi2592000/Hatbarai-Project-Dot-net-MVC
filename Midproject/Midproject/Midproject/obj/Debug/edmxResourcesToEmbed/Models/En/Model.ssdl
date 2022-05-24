@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminLogins">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fname" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Lname" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Mobile_no" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="Id_number" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Date" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AgencyLogins">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Agency_name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Username" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Agencymoneys">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Agency_name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Date" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Money" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserFroms">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="mobile_number" Type="int" Nullable="false" />
+    <Property Name="Orphan_name" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="Location" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Date" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Volenserial" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserLogins">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Mobile_number" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Date" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usermoneys">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Date" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Money" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VolunteerFroms">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="nId_number" Type="int" Nullable="false" />
+    <Property Name="Userserial" Type="int" Nullable="false" />
+    <Property Name="Orphanserial" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VolunteerLogins">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nid_number" Type="int" Nullable="false" />
+    <Property Name="Mobile_number" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Date" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Voluteenerror">
+    <Key>
+      <PropertyRef Name="Seria" />
+    </Key>
+    <Property Name="Seria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nid" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Message" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_UserFroms_UserF">
+    <End Role="VolunteerLogins" Type="Self.VolunteerLogins" Multiplicity="1" />
+    <End Role="UserFroms" Type="Self.UserFroms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VolunteerLogins">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="UserFroms">
+        <PropertyRef Name="Volenserial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VolunteerFroms_AgencyLogins">
+    <End Role="AgencyLogins" Type="Self.AgencyLogins" Multiplicity="1" />
+    <End Role="VolunteerFroms" Type="Self.VolunteerFroms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AgencyLogins">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="VolunteerFroms">
+        <PropertyRef Name="Orphanserial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjectModelStoreContainer">
+    <EntitySet Name="AdminLogins" EntityType="Self.AdminLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AgencyLogins" EntityType="Self.AgencyLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Agencymoneys" EntityType="Self.Agencymoneys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserFroms" EntityType="Self.UserFroms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLogins" EntityType="Self.UserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usermoneys" EntityType="Self.Usermoneys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VolunteerFroms" EntityType="Self.VolunteerFroms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VolunteerLogins" EntityType="Self.VolunteerLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Voluteenerror" EntityType="Self.Voluteenerror" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_UserFroms_UserF" Association="Self.FK_UserFroms_UserF">
+      <End Role="VolunteerLogins" EntitySet="VolunteerLogins" />
+      <End Role="UserFroms" EntitySet="UserFroms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VolunteerFroms_AgencyLogins" Association="Self.FK_VolunteerFroms_AgencyLogins">
+      <End Role="AgencyLogins" EntitySet="AgencyLogins" />
+      <End Role="VolunteerFroms" EntitySet="VolunteerFroms" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Midproject.Models.En.AdminLogin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <form action="/Adminfro/Admininfo" method="get">
+        <input type="text" name="search" placeholder="Enter the First name" />
+        <input type="submit" name="submit" value="Search" />
+    </form>
+
+</p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Serial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile_no)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Serial }) |
+                
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Serial })
+            </td>
+        </tr>
+    }
+    
+    </table>
+
+    <div>
+        you you want to back
+        <a class="btn btn-primary" href="/Adminfro/Index">go back</a>
+    </div>
