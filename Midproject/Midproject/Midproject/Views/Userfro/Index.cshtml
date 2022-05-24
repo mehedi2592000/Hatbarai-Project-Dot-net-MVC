@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Midproject.Models.En.UserFrom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome @Session["Username2"]</h2>
+<div class="row">
+    <div>
+        <a class="btn btn-primary btn-lg btn-block" href="/Userfro/Addstudent">Add Child </a>
+    </div>
+    <br />
+    <br />
+    <div>
+        <a class="btn btn-primary btn-lg btn-block" href="/Userfro/OrphanList">Orphans </a>
+    </div>
+    <br />
+    <br />
+    <div>
+        <a class="btn btn-primary btn-lg btn-block" href="/Userfro/Addmoney">Donate Money</a>
+    </div>
+    <br />
+    <br />
+    <div>
+        <a class="btn btn-primary btn-lg btn-block" href="/Userfro/UserProfile">Profile</a>
+    </div>
+</div>

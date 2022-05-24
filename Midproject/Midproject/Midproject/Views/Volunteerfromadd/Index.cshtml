@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Midproject.Models.En.UserFrom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Serial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mobile_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orphan_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Volenserial)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mobile_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orphan_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volenserial)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Serial }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.Serial }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Serial })
+            </td>
+        </tr>
+    }
+    
+    </table>
+
+    <div>
+        when you complet the edit the fill up the from
+        <a class="btn btn-primary" href="/Volunteerfromadd/Addstudent">confrm the student</a>
+    </div>
+
+    <div>
+        Do you want to see your profile
+        <a class="btn btn-primary" href="/Volunteerfromadd/Volprofile">profile</a>
+    </div>

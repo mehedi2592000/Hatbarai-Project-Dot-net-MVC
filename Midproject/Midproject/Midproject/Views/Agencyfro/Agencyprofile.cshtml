@@ -1,0 +1,60 @@
+﻿@model Midproject.Models.En.AgencyLogin
+
+@{
+    ViewBag.Title = "AgencyProfile";
+}
+
+<h2>AgencyProfile</h2>
+
+<div>
+    <h4>AgencyLogin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Serial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Serial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Agency_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agency_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "AgenEdit", new { id = Model.Serial }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

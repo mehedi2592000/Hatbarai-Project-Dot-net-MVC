@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Midproject.Models.En.VolunteerFrom>
+
+@{
+    ViewBag.Title = "AddChild";
+}
+
+<p>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Serial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nId_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Userserial)
+        </th>
+        <th>
+            
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Serial)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nId_number)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Userserial)
+    </td>
+    <td>
+        @Html.ActionLink("Accept", "AcceptChild", new {id = item.Serial}, new {@class = "btn btn-primary" })
+    </td>
+    <td>
+        
+    </td>
+</tr>
+    }
+
+</table>
+
